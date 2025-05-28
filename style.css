@@ -4,8 +4,8 @@
 }
 
 body {
-  max-width: 1200px;
-  font-family: cursive;
+  max-width: 1440px;
+  font-family: sans-serif;
 }
 main {
   width: 100%;
@@ -25,7 +25,7 @@ header{
 }
 
 .card {
-  min-width: 500px;
+  max-width: 470px;
   background-color: aqua;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ header{
     rgba(237, 221, 83, 1) 100%
   );
   color: white;
-  padding-top: 2rem;
+  padding: 3rem 2rem;
   border-radius: 1rem;
 }
 
@@ -72,17 +72,15 @@ header{
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 3rem;
+    
 }
 
 .weather-icon{
   width: 170px;
-  margin-top: 2rem;
 }
 
 .temperature{
   font-size: 5rem;
-  margin-block: 2rem;
   font-weight: 600;
 }
 
@@ -97,25 +95,19 @@ header{
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
-  margin-top: 50px;
 }
 
-.humidity{
+.col{
   display: flex;
   align-items: center;
   text-align: left;
 }
 
-.humidity-wind img{
+.col img{
   width: 40px;
+    margin-right: 10px;
 }
 
-.wind-speed{
-  display: flex;
-  align-items: center;
-  text-align: left;
-
-}
 .humidity-value{
   display: flex;
 }

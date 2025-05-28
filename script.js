@@ -32,17 +32,30 @@ const weatherIcons = {
 };
 
 
+const form = document.querySelector(".search-field");
+
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent form reload
+    const cityName = input.value.trim();
+    if (cityName) {
+      coordinates(cityName);
+    }
+  });
+
+
 searchBtn.addEventListener("click", () => {
-  const cityName = input.value;
+  const cityName = input.value.trim();
   coordinates(cityName);
 });
+
 
 function coordinates(cityName) {
   fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${cityName}`)
     .then((res) => res.json())
     .then((data) => {
       const cityObj = data.results[0];
-      const cityName = cityObj.admin1
+      const cityName = cityObj.name
       const latitude = cityObj.latitude.toFixed(2);
       const longitude = cityObj.longitude.toFixed(2);
       console.log(data);
@@ -57,9 +70,7 @@ function weatherData(latitude, longitude, cityName) {
   .then((data)=>{
     console.log(data);
     const iconFile = weatherIcons[data.current.weathercode] || "clear.png";
-    //  currentTemp.innerHtml = data.current.temperature_2m
-    //  windSpeed.innerHTML = data.current.wind_speed_10m
-    // humidity.innerHTML = data.current.precipitation
+
     fetchedData.innerHTML =`
      <img class="weather-icon" src="./images/${iconFile}" alt="weather-icon">
           <p class="temperature">${data.current.temperature_2m}${data.current_units.temperature_2m}</p>

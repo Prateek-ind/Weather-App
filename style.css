@@ -26,20 +26,15 @@ header{
 
 .card {
   max-width: 470px;
-  background-color: aqua;
+  width: 100%;
+  margin-inline: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  background: #2a7b9b;
-  background: linear-gradient(
-    278deg,
-    rgba(42, 123, 155, 1) 0%,
-    rgba(87, 199, 133, 1) 51%,
-    rgba(237, 221, 83, 1) 100%
-  );
+  background: linear-gradient(278deg, rgb(155 42 118) 0%, rgb(102 44 99) 51%, rgb(0 0 0) 100%);
   color: white;
-  padding: 3rem 2rem;
+  padding: 1rem .5rem;
   border-radius: 1rem;
 }
 
@@ -108,6 +103,38 @@ header{
     margin-right: 10px;
 }
 
-.humidity-value{
-  display: flex;
+.humidity-value, .wind-speed{
+  margin-bottom: .25 rem;
+}
+
+@media (max-width: 600px) {
+  .card h3 {
+    font-size: 1.5rem;
+  }
+
+  .weather-icon {
+    width: 100px;
+  }
+
+  .temperature {
+    font-size: 2rem;
+  }
+
+  .city {
+    font-size: 1.2rem;
+  }
+
+  .col img {
+    width: 20px;
+  }
+
+  .col {
+    font-size: 0.8rem;
+  }
+
+  .humidity-wind {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }

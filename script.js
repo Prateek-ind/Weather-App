@@ -58,7 +58,6 @@ function coordinates(cityName) {
       const cityName = cityObj.name
       const latitude = cityObj.latitude.toFixed(2);
       const longitude = cityObj.longitude.toFixed(2);
-      console.log(data);
       weatherData(latitude, longitude, cityName)
     });
 }
@@ -68,7 +67,7 @@ function weatherData(latitude, longitude, cityName) {
     `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,precipitation,wind_speed_10m,weathercode`
   ).then((res)=>res.json())
   .then((data)=>{
-    console.log(data);
+  
     const iconFile = weatherIcons[data.current.weathercode] || "clear.png";
 
     fetchedData.innerHTML =`

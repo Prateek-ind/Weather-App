@@ -55,6 +55,7 @@ header{
     height: 60px;
     width: 90%;
     max-width: 470px;
+    font-size: 1.5rem;
     border-radius: 2rem;
     border: none;
     outline: none;
@@ -64,6 +65,9 @@ header{
     flex: 1;
     margin-right: 16px;
 }
+.card input::placeholder{
+  font-size: 1rem;
+}
 
 .card button{
     height: 60px;
@@ -72,6 +76,10 @@ header{
     border: none;
     outline: none;
     cursor: pointer;
+    
+}
+.card button:hover{
+  transform: scale(1.1);
 }
 
 .weather-data-fetched{
@@ -99,7 +107,7 @@ header{
 }
 
 .humidity-wind{
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
@@ -139,6 +147,10 @@ header{
 
   .col img {
     width: 20px;
+  }
+
+  .card input{
+    font-size: 1rem;
   }
 
   .col {
